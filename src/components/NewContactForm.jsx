@@ -1,5 +1,7 @@
+import * as actions from "./actions";
+import { connect } from "react-redux";
 import { useState } from "react";
-export default function NewContactForm(props) {
+function NewContactForm(props) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   function handleSubmit(e) {
@@ -9,7 +11,7 @@ export default function NewContactForm(props) {
       !isNaN(number) &&
       number.length === 10
     ) {
-      props.addContact({ id: props.count, name, number });
+      props.addContact({ id: props.contacts.length, name, number });
       setName("");
       setNumber("");
     }
@@ -33,3 +35,16 @@ export default function NewContactForm(props) {
     </form>
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    contacts: state.contacts,
+  };
+}
+
+const mapDispatchToProps = {
+  addContact: actions.addContact,
+  deleteContact: actions.deleteContact,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewContactForm);

@@ -1,3 +1,4 @@
+import React from "react";
 import ContactList from "./ContactList";
 import NewContactForm from "./NewContactForm";
 import { connect } from "react-redux";

@@ -1,6 +1,6 @@
 import * as actions from "./actions";
 import { connect } from "react-redux";
-import { useState } from "react";
+import React, { useState } from "react";
 function NewContactForm(props) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");

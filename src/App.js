@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import ContactManager from "./components/ContactManager";
 import { createStore } from "redux";

@@ -1,11 +1,10 @@
 import ContactList from "./ContactList";
-import { useState } from "react";
+import React,{ useState } from "react";
 import NewContactForm from "./NewContactForm";
 
 export default function ContactManager() {
   function addContact(contact) {
     setContacts([...contacts, contact]);
-    console.log(contacts);
   }
 
   function handleDelete(id) {

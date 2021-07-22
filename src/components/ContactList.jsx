@@ -1,3 +1,4 @@
+import React from 'react';
 export default function ContactList(props) {
   return (
     <ul>
@@ -5,7 +6,7 @@ export default function ContactList(props) {
         <li key={index}>
           <span>{contact.name}</span>
           <span>
-            {contact.number}{" "}
+            {contact.number}{' '}
             <button onClick={() => props.handleDelete(contact.id)}>x</button>
           </span>
         </li>
